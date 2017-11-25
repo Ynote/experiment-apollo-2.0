@@ -2,6 +2,11 @@
 
 This is a personnal experiment to try Apollo client 2.0.
 
+## Requirements
+
+- [Github personnal access token for this
+  app](https://github.com/settings/tokens)
+
 ## Usage
 
 - Clone the repository:
