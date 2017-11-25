@@ -2,6 +2,29 @@
 
 This is a personnal experiment to try Apollo client 2.0.
 
+### Stage 0
+
+- Setup Apollo Client.
+- Simple call on Github GraphQL endpoint.
+- Display a list with fetched data.
+
+### Stage 1
+
+- Create a wrapping component to handle list display depending on data loading.
+- Update files architecture into queries and components.
+
+### Stage n
+
+**Read**:
+- Store lists queries variables into configuration file.
+- Generate lists components from configuration file.
+- Display same resource into different components.
+- Add style on list components.
+
+**Write**:
+- Add form to add queries variables into configuration file.
+- Add simple mutation (add label? update title?)
+
 ## Requirements
 
 - [Github personnal access token for this
@@ -38,3 +61,4 @@ yarn start
 - [Apollo Client 2.0](https://www.apollographql.com/docs/react/index.html)
 - [Use a Render
   Prop](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
+- [Github GraphQL explorer](https://developer.github.com/v4/explorer/)
