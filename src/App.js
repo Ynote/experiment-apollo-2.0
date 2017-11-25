@@ -8,6 +8,7 @@ import { Config } from './common/utils/config'
 import { RepositoriesList } from './dashboard/components/repositories-list'
 import { NeedsReviewPrList }
   from './dashboard/components/needs-review-pr-list'
+import { TableOfContents } from './dashboard/components/table-of-contents'
 
 const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
 const middlewareLink = setContext(() => ({
@@ -26,6 +27,7 @@ class App extends Component {
     return (
       <ApolloProvider client={ client }>
         <div>
+          <TableOfContents />
           <RepositoriesList />
           <NeedsReviewPrList />
         </div>
