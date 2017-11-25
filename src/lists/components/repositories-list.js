@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { List as PresentationalList } from '../../common/components/list'
+import React from 'react'
+import { ListWithData } from '../../common/components/list-with-data'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
@@ -22,16 +22,21 @@ const repositoriesQuery = gql `
 `
 
 const List = ({ data }) => {
-  if (data.loading) return null
-  if (data.error) { console.log(data.error) }
+  const itemsFromData = data => {
+    const repos = data.organization.repositories.edges
 
-  const repos = data.organization.repositories.edges
-  const items = repos.map(edge => ({
-    key: edge.node.id,
-    content: edge.node.name
-  }))
+    return repos.map(edge => ({
+      key: edge.node.id,
+      content: edge.node.name
+    }))
+  }
 
-  return <PresentationalList items={ items } />
+  const props = {
+    data,
+    itemsFromData,
+  }
+
+  return <ListWithData { ...props } />
 }
 
 export const RepositoriesList = graphql(repositoriesQuery)(List)
