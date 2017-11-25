@@ -10,6 +10,7 @@ const repositoriesQuery = gql `
       repositories(last: 10) {
         edges {
           node {
+            id,
             name,
             issues {
               totalCount
@@ -24,7 +25,6 @@ const repositoriesQuery = gql `
 
 const ListWithData = ({ data }) => {
   const render = data => {
-    console.log('render')
     const repos = data.organization.repositories.edges
     const items = repos.map(edge => ({
       key: edge.node.id,
