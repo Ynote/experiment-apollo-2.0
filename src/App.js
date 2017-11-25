@@ -5,7 +5,7 @@ import { ApolloClient } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import { setContext } from 'apollo-link-context'
 import { Config } from './common/utils/config'
-import { RepositoriesList } from './lists/components/repositories-list'
+import { RepositoriesList } from './repositories-list'
 
 const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
 const middlewareLink = setContext(() => ({
