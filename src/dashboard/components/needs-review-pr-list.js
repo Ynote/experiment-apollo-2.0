@@ -10,7 +10,8 @@ const ListWithData = ({ data }) => {
     const prs = data.repository.pullRequests.nodes
     const items = prs.map(node => ({
       key: node.id,
-      content: node.title
+      content: node.title,
+      href: node.url,
     }))
 
     return <List items={ items } />

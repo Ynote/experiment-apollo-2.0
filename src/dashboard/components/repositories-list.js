@@ -6,10 +6,11 @@ import { graphql } from 'react-apollo'
 
 const ListWithData = ({ data }) => {
   const render = data => {
-    const repos = data.organization.repositories.edges
-    const items = repos.map(edge => ({
-      key: edge.node.id,
-      content: edge.node.name
+    const repos = data.organization.repositories.nodes
+    const items = repos.map(node => ({
+      key: node.id,
+      content: node.name,
+      href: node.url,
     }))
 
     return <List items={ items } />
@@ -19,7 +20,7 @@ const ListWithData = ({ data }) => {
 
   return (
     <div>
-      <h2>Repositories</h2>
+      <h2>Last updated repositories</h2>
       <ComponentWithData { ...props } />
     </div>
   )

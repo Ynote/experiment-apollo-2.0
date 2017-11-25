@@ -7,6 +7,7 @@ export const needsReviewPullRequestsQuery = gql `
         nodes {
           id,
           title,
+          url,
           author {
             avatarUrl
             login

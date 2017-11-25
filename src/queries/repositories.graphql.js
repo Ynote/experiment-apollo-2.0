@@ -3,16 +3,15 @@ import gql from 'graphql-tag'
 export const repositoriesQuery = gql `
   query {
     organization(login: "KissKissBankBank") {
-      repositories(last: 10) {
-        edges {
-          node {
-            id,
-            name,
-            issues {
-              totalCount
-            },
-            shortDescriptionHTML
-          }
+      repositories(first: 10, orderBy: { field: UPDATED_AT, direction: DESC }) {
+        nodes {
+          id,
+          name,
+          url,
+          issues {
+            totalCount
+          },
+          shortDescriptionHTML
         }
       }
     }
