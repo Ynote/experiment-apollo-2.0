@@ -36,3 +36,5 @@ yarn start
 
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 - [Apollo Client 2.0](https://www.apollographql.com/docs/react/index.html)
+- [Use a Render
+  Prop](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce)
