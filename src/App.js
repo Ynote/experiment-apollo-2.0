@@ -5,7 +5,25 @@ import { ApolloClient } from 'apollo-client'
 import { ApolloProvider, graphql } from 'react-apollo'
 import { setContext } from 'apollo-link-context'
 import gql from 'graphql-tag'
-import { githubConfig } from './config/github'
+import { Config } from './config/app'
+
+const getAppConfig = () => {
+  const storageKey = Config.app.name
+  const appConfig = localStorage.getItem(storageKey)
+
+  if (!!appConfig) return JSON.parse(appConfig)
+
+  throw new Error('Try Apollo: no configuration set for this app!')
+}
+
+const getGithubToken = () => {
+  const config = getAppConfig()
+  const hasToken = config.github && config.github.token
+
+  if (hasToken) return config.github.token
+
+  throw new Error('Try Apollo: no github token set for this app!')
+}
 
 const repositoriesQuery = gql `
   query {
@@ -44,7 +62,7 @@ const RepositoriesListWithData = graphql(repositoriesQuery)(RepositoriesList)
 const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
 const middlewareLink = setContext(() => ({
   headers: {
-    authorization: `bearer ${githubConfig.token}`
+    authorization: `bearer ${getGithubToken()}`
   }
 }))
 
