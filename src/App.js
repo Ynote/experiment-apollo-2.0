@@ -6,6 +6,8 @@ import { ApolloProvider } from 'react-apollo'
 import { setContext } from 'apollo-link-context'
 import { Config } from './common/utils/config'
 import { RepositoriesList } from './dashboard/components/repositories-list'
+import { NeedsReviewPrList }
+  from './dashboard/components/needs-review-pr-list'
 
 const httpLink = createHttpLink({ uri: 'https://api.github.com/graphql' });
 const middlewareLink = setContext(() => ({
@@ -23,7 +25,10 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={ client }>
-        <RepositoriesList />
+        <div>
+          <RepositoriesList />
+          <NeedsReviewPrList />
+        </div>
       </ApolloProvider>
     )
   }

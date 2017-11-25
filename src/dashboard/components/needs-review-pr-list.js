@@ -1,15 +1,16 @@
 import React from 'react'
 import { ComponentWithData } from '../../common/components/component-with-data'
 import { List } from '../../common/components/list'
-import { repositoriesQuery } from '../../queries/repositories.graphql'
+import { needsReviewPullRequestsQuery }
+  from '../../queries/pull-requests.graphql'
 import { graphql } from 'react-apollo'
 
 const ListWithData = ({ data }) => {
   const render = data => {
-    const repos = data.organization.repositories.edges
-    const items = repos.map(edge => ({
-      key: edge.node.id,
-      content: edge.node.name
+    const prs = data.repository.pullRequests.nodes
+    const items = prs.map(node => ({
+      key: node.id,
+      content: node.title
     }))
 
     return <List items={ items } />
@@ -19,10 +20,12 @@ const ListWithData = ({ data }) => {
 
   return (
     <div>
-      <h2>Repositories</h2>
+      <h2>Needs review</h2>
       <ComponentWithData { ...props } />
     </div>
   )
 }
 
-export const RepositoriesList = graphql(repositoriesQuery)(ListWithData)
+export const NeedsReviewPrList = graphql(
+  needsReviewPullRequestsQuery
+)(ListWithData)
