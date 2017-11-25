@@ -9,8 +9,16 @@ This is a personnal experiment to try Apollo client 2.0.
 git clone git@github.com:Ynote/try-apollo.git
 ```
 
-- Change `src/config/github_example.js` to `src/config/github.js` with your
-  personnal token.
+- Update the application namescope in `src/config/app.js`
+
+- Set your app personal configuration in `localStorage` directly in the browser
+  console:
+
+```js
+var config = { github: { token: 'your-github-token' } }
+
+localStorage.setItem('your-app-namescope', config)
+```
 
 - Start the app:
 ```
