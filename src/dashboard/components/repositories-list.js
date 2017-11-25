@@ -1,9 +1,8 @@
 import React from 'react'
 import { ComponentWithData } from '../../common/components/component-with-data'
 import { List } from '../../common/components/list'
-import { repositoriesQuery } from '../../queries/repositories'
+import { repositoriesQuery } from '../../queries/repositories.graphql'
 import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
 
 const ListWithData = ({ data }) => {
   const render = data => {

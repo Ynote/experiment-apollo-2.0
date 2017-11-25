@@ -1,3 +1,5 @@
+import gql from 'graphql-tag'
+
 export const repositoriesQuery = gql `
   query {
     organization(login: "KissKissBankBank") {
