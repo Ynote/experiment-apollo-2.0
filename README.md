@@ -1,6 +1,8 @@
 # Try Apollo client 2.0
 
-This is a personnal experiment to try Apollo client 2.0.
+> Experiment from 2017
+
+This is a small project that intends to test Apollo client 2.0.
 
 ### Stage 0
 
