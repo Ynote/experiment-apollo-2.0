@@ -8,6 +8,7 @@ This is a small project that intends to test [Apollo client 2.0](https://www.apo
 
 - Apollo new `createHttpLink` and  `ApolloClient` setup are great separation of concerns.
 - The Github GraphQL endpoint is AWESOME!
+- It is a very bad idea to store configuration information in `LocalStorage`. Is is not convenient **at all** to work with the browser.
 
 <img width="1459" alt="screen shot 2018-11-04 at 11 16 45" src="https://user-images.githubusercontent.com/548778/47962868-681cdf80-e023-11e8-99c0-091e4f1ed1f9.png">
 
