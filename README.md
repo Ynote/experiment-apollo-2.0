@@ -4,6 +4,8 @@
 
 This is a small project that intends to test [Apollo client 2.0](https://www.apollographql.com/).
 
+The app shows the list of the last updated repositories you are following on [Github](https://github.com) and the list of the PRs that need your review.
+
 ## Results :memo:
 
 - Apollo new `createHttpLink` and  `ApolloClient` setup are great separation of concerns.
