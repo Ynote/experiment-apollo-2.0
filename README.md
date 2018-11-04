@@ -4,6 +4,13 @@
 
 This is a small project that intends to test [Apollo client 2.0](https://www.apollographql.com/).
 
+## Results :memo:
+
+- Apollo new `createHttpLink` and  `ApolloClient` setup are great separation of concerns.
+- The Github GraphQL endpoint is AWESOME!
+
+<img width="1459" alt="screen shot 2018-11-04 at 11 16 45" src="https://user-images.githubusercontent.com/548778/47962868-681cdf80-e023-11e8-99c0-091e4f1ed1f9.png">
+
 ## Steps
 
 ### Create the app
@@ -12,12 +19,12 @@ This is a small project that intends to test [Apollo client 2.0](https://www.apo
 - Simple call on Github GraphQL endpoint.
 - Display a list with fetched data.
 
-### New step (not done):
+### Use a wrapper component to handle query result and errors
 
 - Create a wrapping component to handle list display depending on data loading.
 - Update files architecture into queries and components.
 
-### Step n (not done):
+### Future steps (not done):
 
 **Read**:
 - Store lists queries variables into configuration file.
@@ -53,7 +60,7 @@ yarn start
 ```js
 var config = { github: { token: 'your-github-token' } }
 
-localStorage.setItem('your-app-namescope', JSON.stringify(config)
+localStorage.setItem('your-app-namescope', JSON.stringify(config))
 ```
 - Reload the page.
 
