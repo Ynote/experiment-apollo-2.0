@@ -45,7 +45,11 @@ This is a small project that intends to test [Apollo client 2.0](https://www.apo
 
 - Clone the repository:
 ```
-git clone git@github.com:Ynote/try-apollo.git
+git clone git@github.com:Ynote/experiment-apollo-2.0.git
+```
+- Install the dependencies:
+```
+yarn
 ```
 - Update the application namescope in `src/config/app.js`
 - Start the app:
