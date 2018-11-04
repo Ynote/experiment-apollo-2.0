@@ -1,8 +1,33 @@
-# Try Apollo client 2.0
+# Experiment Apollo 2.0
 
 > Experiment from 2017
 
-This is a small project that intends to test Apollo client 2.0.
+This is a small project that intends to test [Apollo client 2.0](https://www.apollographql.com/).
+
+## Steps
+
+### Create the app
+
+- Setup Apollo Client.
+- Simple call on Github GraphQL endpoint.
+- Display a list with fetched data.
+
+### New step (not done):
+
+- Create a wrapping component to handle list display depending on data loading.
+- Update files architecture into queries and components.
+
+### Step n (not done):
+
+**Read**:
+- Store lists queries variables into configuration file.
+- Generate lists components from configuration file.
+- Display same resource into different components.
+- Add style on list components.
+
+**Write**:
+- Add form to add queries variables into configuration file.
+- Add simple mutation (add label? update title?)
 
 ## Requirements
 
@@ -15,8 +40,12 @@ This is a small project that intends to test Apollo client 2.0.
 ```
 git clone git@github.com:Ynote/try-apollo.git
 ```
-
 - Update the application namescope in `src/config/app.js`
+- Start the app:
+```
+yarn start
+```
+- Open [http://localhost:3000/](http://localhost:3000/) to see the app. It won't work :)
 
 - Set your app personal configuration in `localStorage` directly in the browser
   console:
@@ -24,40 +53,9 @@ git clone git@github.com:Ynote/try-apollo.git
 ```js
 var config = { github: { token: 'your-github-token' } }
 
-localStorage.setItem('your-app-namescope', config)
+localStorage.setItem('your-app-namescope', JSON.stringify(config)
 ```
-
-- Start the app:
-```
-yarn start
-```
-
-- Open [http://localhost:3000/](http://localhost:3000/) to see the app.
-
-## Suggested roadmap
-
-### Stage 0
-
-- Setup Apollo Client.
-- Simple call on Github GraphQL endpoint.
-- Display a list with fetched data.
-
-### Stage 1
-
-- Create a wrapping component to handle list display depending on data loading.
-- Update files architecture into queries and components.
-
-### Stage n
-
-**Read**:
-- Store lists queries variables into configuration file.
-- Generate lists components from configuration file.
-- Display same resource into different components.
-- Add style on list components.
-
-**Write**:
-- Add form to add queries variables into configuration file.
-- Add simple mutation (add label? update title?)
+- Reload the page.
 
 ## Resources
 
